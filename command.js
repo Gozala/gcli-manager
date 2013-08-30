@@ -1,1 +1,5 @@
-
+require("sdk/panel")
+require("sdk/tabs")
+require("sdk/windows")
+require("sdk/notifications")
+require("sdk/widget")

@@ -12,8 +12,13 @@ let widget = Widget({
   id: "mozilla-icon",
   label: "My Mozilla Widget",
   contentURL: "http://www.mozilla.org/favicon.ico",
-  onClick: () => run({ command: "tilt toggle", args: {} })
+  onClick: () => run({ command: "resize to", args: { width: 100, height: 200 } })
 });
+
+
+
+
+
 
 let startCommandEditor = () => {
   let window = open({
@@ -38,6 +43,15 @@ let startCommandEditor = () => {
   }, true)
 }
 
+
+
+
+
+
+
+
+
+
 register({
   command: {
     description: "Command manager",
@@ -45,35 +59,6 @@ register({
       description: "Write new commands",
       params: [],
       exec: startCommandEditor
-    }
-  },
-  greet: {
-    description: "group of greeting commands",
-    me: {
-      please: {
-        description: "Greet",
-        params: [{name: "name", type: "string"}],
-        exec: name => "Hello my dear " + name
-      }
-    },
-    both: {
-      description: "Greets you",
-      params: [{name: "firstname", type: "string"},
-               {name: "lastname", type: "string"}],
-      exec: (firstname, lastname) => {
-        return "Hello " + firstname + " " + lastname
-      }
-    },
-    name: {
-      description: "greet by name",
-      params: [{name: "name", type: "string"}],
-      exec: (name) => "Bye " + name
-    },
-    html: {
-      description: "greet html",
-      returnType: "html",
-      params: [{name: "name", type: "string"}],
-      exec: name => "<h1>" + name + "</h1>"
     }
   }
 });
